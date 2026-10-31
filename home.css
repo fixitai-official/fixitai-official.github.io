@@ -1070,3 +1070,53 @@ img, video, svg {
   }
 }
 
+/* FIXIT AI — Chat answers below input */
+
+.diagnosis-box #chat-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: auto;
+  max-height: 420px;
+  overflow-y: auto;
+  margin: 18px;
+  padding: 18px;
+  border: 1px solid rgba(120,160,220,.15);
+  border-radius: 18px;
+  background: rgba(6,16,32,.45);
+}
+
+.diagnosis-box .chat-message {
+  width: fit-content;
+  max-width: 85%;
+  padding: 14px 18px;
+  border-radius: 17px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.diagnosis-box .user-message {
+  align-self: flex-end;
+  background: #2563eb;
+  color: #fff;
+}
+
+.diagnosis-box .assistant-message {
+  align-self: flex-start;
+  background: #203651;
+  color: #eaf3ff;
+}
+
+@media (max-width: 600px) {
+  .diagnosis-box #chat-messages {
+    margin: 12px;
+    padding: 12px;
+  }
+
+  .diagnosis-box .chat-message {
+    max-width: 95%;
+    font-size: 14px;
+  }
+}
+
