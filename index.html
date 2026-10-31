@@ -1,63 +1,165 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FIXIT AI</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="FIXIT AI helps you understand PC problems and find clear troubleshooting guidance.">
+  <title>FIXIT AI — Every Problem Has a Solution</title>
+  <link rel="stylesheet" href="home.css">
 </head>
+
 <body>
-  <div class="app-shell">
-    <aside class="sidebar">
-      <div class="brand"><div class="brand-mark">F</div><div><strong>FIXIT<span> AI</span></strong><small>PC CARE ASSISTANT</small></div></div>
-      <div class="nav-label">WORKSPACE</div>
-      <button class="nav-item active" data-view="overview"><span>◈</span> Overview</button>
-      <button class="nav-item" data-view="diagnose"><span>⌕</span> Diagnose a problem</button>
-      <button class="nav-item" data-view="system"><span>▦</span> System health</button>
-      <button class="nav-item" data-view="guides"><span>☷</span> Fix guides</button>
-      <div class="sidebar-bottom"><div class="privacy-icon">✓</div><div><b>Privacy first</b><small>Diagnostics stay on this PC.</small></div></div>
-    </aside>
-    <main class="main">
-      <header class="topbar"><div><div class="eyebrow">YOUR PERSONAL TECH SUPPORT</div><h1 id="page-title">Overview</h1></div><div class="top-right"><span class="status-dot"></span><span>Local diagnostics</span><div class="avatar">F</div></div></header>
-      <section class="view active" id="view-overview">
-        <div class="hero"><div class="hero-content"><div class="pill"><span class="pulse"></span> YOUR PC, MADE UNDERSTANDABLE</div><h2>Let's get your<br><em>computer feeling better.</em></h2><p>Understand what's happening, find likely causes, and follow safe steps to fix common issues.</p><button class="primary" data-go="diagnose">Diagnose a problem <span>→</span></button></div><div class="hero-art"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="core"><div class="core-inner">F<span>+</span></div></div><div class="float-card card-a"><span class="tiny-icon">⌁</span><div><b>System check</b><small>Local & private</small></div></div><div class="float-card card-b"><span class="check-circle">✓</span><div><b>Safe guidance</b><small>You stay in control</small></div></div></div></div>
-        <div class="section-heading"><div><h3>System snapshot</h3><p>Read-only information from this computer</p></div><button class="text-button" id="refresh">↻ Refresh</button></div>
-        <div class="metric-grid">
-          <article class="metric"><div class="metric-top"><span>MEMORY IN USE</span><span class="metric-symbol">▥</span></div><div class="metric-value" id="ram-value">Checking…</div><div class="metric-note" id="ram-note">Reading system information</div><div class="progress"><span id="ram-bar"></span></div></article>
-          <article class="metric"><div class="metric-top"><span>PROCESSOR</span><span class="metric-symbol">⌘</span></div><div class="metric-value" id="cpu-value">Checking…</div><div class="metric-note" id="cpu-note">CPU model</div></article>
-          <article class="metric"><div class="metric-top"><span>STORAGE</span><span class="metric-symbol">▤</span></div><div class="metric-value" id="disk-value">Checking…</div><div class="metric-note" id="disk-note">Available disk space</div></article>
-          <article class="metric"><div class="metric-top"><span>NETWORK</span><span class="metric-symbol">⌁</span></div><div class="metric-value" id="net-value">Checking…</div><div class="metric-note" id="net-note">Local connection status</div></article>
+  <header class="hero" id="home">
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="#home" class="logo">
+        <div class="logo-mark">F</div>
+        <span>FIXIT <span>AI</span></span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="dashboard.html">Dashboard</a>
+      </div>
+
+      <a href="login.html" class="nav-cta">Sign In ↗</a>
+    </nav>
+
+    <div class="hero-content">
+      <div>
+        <div class="eyebrow">
+          <span class="pulse"></span>
+          YOUR INTELLIGENT PC COMPANION
         </div>
-        <div class="bottom-grid"><article class="panel"><div class="panel-title"><div><h3>Start with a problem</h3><p>Choose what you need help with.</p></div><span class="panel-icon">✳</span></div><div class="problem-list"><button class="problem" data-problem="slow"><span class="problem-ico amber">◷</span><span><b>My PC is running slowly</b><small>Performance and memory checks</small></span><span class="arrow">→</span></button><button class="problem" data-problem="storage"><span class="problem-ico blue">▤</span><span><b>I'm running out of storage</b><small>Check disk space safely</small></span><span class="arrow">→</span></button><button class="problem" data-problem="wifi"><span class="problem-ico violet">⌁</span><span><b>My internet isn't working</b><small>Check network connection</small></span><span class="arrow">→</span></button></div></article><article class="panel pc-panel"><div class="panel-title"><div><h3>About this PC</h3><p>Basic device information</p></div><span class="panel-icon">▣</span></div><div class="device-name" id="device-name">Loading device…</div><div class="info-row"><span>Operating system</span><b id="os-name">—</b></div><div class="info-row"><span>CPU cores</span><b id="cores">—</b></div><div class="info-row"><span>System uptime</span><b id="uptime">—</b></div><div class="info-row"><span>Battery</span><b id="battery">Checking…</b></div></article></div>
-        <div class="footer-note"><span>◇</span> FIXIT AI only runs checks you request. No settings are changed automatically.</div>
-      </section>
-      <section class="view" id="view-diagnose">
-        <div class="page-intro"><div class="pill"><span class="pulse"></span> GUIDED TROUBLESHOOTING</div><h2>What seems to be the problem?</h2><p>Choose an issue to get safe, beginner-friendly steps. This version uses built-in guides and local diagnostics; AI chat is not connected yet.</p></div>
-        <div class="diagnose-grid">
-          <button class="diagnose-card" data-problem="slow"><span class="big-ico amber">◷</span><h3>My PC is slow</h3><p>Check memory, uptime and common causes of sluggish performance.</p><span class="card-link">Start diagnosis →</span></button>
-          <button class="diagnose-card" data-problem="storage"><span class="big-ico blue">▤</span><h3>Storage is full</h3><p>Check available drive space and learn safe ways to free space.</p><span class="card-link">Start diagnosis →</span></button>
-          <button class="diagnose-card" data-problem="wifi"><span class="big-ico violet">⌁</span><h3>Wi-Fi or internet</h3><p>Check whether Windows reports a local network connection.</p><span class="card-link">Start diagnosis →</span></button>
+
+        <h1>
+          Every Problem
+          Has a
+          <span class="gradient-text">Solution.</span>
+        </h1>
+
+        <p class="hero-description">
+          Technology should make life easier, not harder.
+          Meet FIXIT AI — your personal PC troubleshooting
+          companion. Understand problems, explore possible
+          causes, and find clear steps toward a solution.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="dashboard.html" class="btn btn-primary">
+            Start Diagnosing ↗
+          </a>
+
+          <a href="#features" class="btn btn-secondary">
+            Explore Features →
+          </a>
         </div>
-        <div id="diagnosis-result" class="panel diagnosis-result hidden"></div>
-        <div class="panel custom-problem"><div class="panel-title"><div><h3>Describe another issue</h3><p>This prototype can save your description locally in the current screen and offer general next steps.</p></div></div><textarea id="custom-text" placeholder="Example: My laptop fan is loud and the computer feels hot…"></textarea><button class="primary" id="custom-submit">Get safe first steps <span>→</span></button><div id="custom-result" class="custom-result hidden"></div></div>
-      </section>
-      <section class="view" id="view-system">
-        <div class="page-intro"><div class="pill"><span class="pulse"></span> READ-ONLY CHECKS</div><h2>System health</h2><p>Real local metrics where supported. This page does not run repairs or change settings.</p></div>
-        <div class="system-layout"><div class="panel"><div class="panel-title"><div><h3>Memory</h3><p>Current system memory snapshot</p></div></div><div class="large-stat" id="sys-ram">—</div><div class="progress"><span id="sys-ram-bar"></span></div><div class="info-row"><span>In use</span><b id="sys-ram-used">—</b></div><div class="info-row"><span>Available</span><b id="sys-ram-free">—</b></div><div class="info-row"><span>Total installed/visible</span><b id="sys-ram-total">—</b></div></div><div class="panel"><div class="panel-title"><div><h3>Disk volumes</h3><p>Space on local drives</p></div></div><div id="disk-list" class="disk-list">Loading drives…</div></div><div class="panel full"><div class="panel-title"><div><h3>Network interfaces</h3><p>Local IPv4 addresses; no internet speed test is performed.</p></div></div><div id="network-list">Checking network…</div></div></div>
-        <div class="actions-row"><button class="secondary" id="save-report">↓ Save diagnostic report</button><button class="secondary" id="system-refresh">↻ Refresh checks</button></div><div id="report-status" class="subtle"></div>
-      </section>
-      <section class="view" id="view-guides">
-        <div class="page-intro"><div class="pill"><span class="pulse"></span> SIMPLE STEPS, NO GUESSWORK</div><h2>Fix guides</h2><p>Start with low-risk checks. Stop if a step doesn't match what you see.</p></div>
-        <div class="guides-grid">
-          <article class="panel guide"><div class="guide-head"><span class="big-ico amber">◷</span><span class="tag">PERFORMANCE</span></div><h3>When your PC feels slow</h3><ol><li>Save your work and restart if you have not restarted recently.</li><li>Open Task Manager with <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Esc</kbd>.</li><li>On the Processes tab, check which apps use the most CPU or memory.</li><li>Close only apps you recognize and are not using.</li><li>Check available storage in Windows Settings.</li></ol><button class="text-button" data-problem="slow">Check my system →</button></article>
-          <article class="panel guide"><div class="guide-head"><span class="big-ico blue">▤</span><span class="tag">STORAGE</span></div><h3>When storage is nearly full</h3><ol><li>Open Settings → System → Storage.</li><li>Review temporary files before removing anything.</li><li>Use Windows Storage Sense if appropriate.</li><li>Back up important files before moving or deleting them.</li><li>Never delete unfamiliar system folders to free space.</li></ol><button class="text-button" data-problem="storage">Check my drives →</button></article>
-          <article class="panel guide"><div class="guide-head"><span class="big-ico violet">⌁</span><span class="tag">CONNECTIVITY</span></div><h3>When Wi-Fi or internet fails</h3><ol><li>Check whether other devices can access the internet.</li><li>Confirm Wi-Fi is enabled and airplane mode is off.</li><li>Reconnect to your known network.</li><li>Restart the router only if you can safely do so and others are aware.</li><li>If it still fails, note any exact error message before changing settings.</li></ol><button class="text-button" data-problem="wifi">Check network →</button></article>
+      </div>
+
+      <div class="visual" aria-label="FIXIT AI feature illustration">
+        <div class="orbit"></div>
+        <div class="ai-core">F<span>+</span></div>
+
+        <div class="float-card card-one">
+          ◈ AI Troubleshooting
+          <small>Explore possible solutions</small>
         </div>
-        <div class="footer-note"><span>i</span> These are general first steps, not a guarantee of a diagnosis. Never share passwords or verification codes with support tools.</div>
-      </section>
-    </main>
-  </div>
-  <script src="renderer.js"></script>
+
+        <div class="float-card card-two">
+          ⚡ System Insights
+          <small>Understand your device</small>
+        </div>
+
+        <div class="float-card card-three">
+          ✓ Guided Fixes
+          <small>Step-by-step assistance</small>
+        </div>
+
+        <div class="float-card card-four">
+          ◇ Privacy First
+          <small>You stay in control</small>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="features">
+      <div class="section-heading">
+        <span class="kicker">BUILT FOR CLARITY</span>
+        <h2>Powerful tools.<br>Simple experience.</h2>
+        <p>
+          Explore the tools designed to make computer
+          troubleshooting easier to understand.
+        </p>
+      </div>
+
+      <div class="features">
+        <article class="feature">
+          <div class="feature-icon">✦</div>
+          <h3>Smart Diagnosis</h3>
+          <p>
+            Describe what's happening with your PC
+            and explore likely causes and troubleshooting steps.
+          </p>
+        </article>
+
+        <article class="feature">
+          <div class="feature-icon">▣</div>
+          <h3>System Insights</h3>
+          <p>
+            View available device and browser information
+            to better understand your system.
+          </p>
+        </article>
+
+        <article class="feature">
+          <div class="feature-icon">✓</div>
+          <h3>Guided Solutions</h3>
+          <p>
+            Follow clear, beginner-friendly guides
+            for common computer problems.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="section-heading">
+        <span class="kicker">WHY FIXIT AI?</span>
+        <h2>Technology, made understandable.</h2>
+        <p>
+          FIXIT AI is being built to help everyday
+          computer users troubleshoot problems
+          without needing to be technology experts.
+          Our goal is to make useful technical
+          guidance clear, approachable, and accessible.
+        </p>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <span class="kicker">READY WHEN YOU ARE</span>
+      <h2>Let's solve something.</h2>
+      <p>
+        Open your troubleshooting workspace and
+        start exploring possible fixes.
+      </p>
+      <div class="hero-buttons" style="justify-content:center">
+        <a href="dashboard.html" class="btn btn-primary">
+          Launch FIXIT AI →
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 FIXIT AI. All rights reserved.</span>
+    <span>Built to make technology simpler.</span>
+    <a href="#home">Back to top ↑</a>
+  </footer>
 </body>
 </html>
