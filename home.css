@@ -733,3 +733,340 @@ footer {
   align-self: flex-end;
 }
 
+/* ===================================
+   FIXIT AI 4.0 — MOBILE EXPERIENCE
+   =================================== */
+
+html, body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+img, video, svg {
+  max-width: 100%;
+}
+
+/* Mobile navigation trigger */
+.menu-toggle {
+  display: none;
+  width: 46px;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 14px;
+  background: rgba(255,255,255,.09);
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* Better assistant appearance */
+.diagnosis-box .chat-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.diagnosis-box .chat-message {
+  max-width: min(85%, 650px);
+  padding: 16px 19px;
+  border-radius: 18px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.diagnosis-box .assistant-message {
+  align-self: flex-start;
+  background: #1c3049;
+  color: #e9f3ff;
+}
+
+.diagnosis-box .user-message {
+  align-self: flex-end;
+  background: linear-gradient(135deg,#2563eb,#4f46e5);
+  color: white;
+}
+
+.diagnosis-box .chat-form textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 110px;
+  padding: 12px;
+  background: #102139;
+  border: 1px solid #365474;
+  border-radius: 12px;
+  color: white;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.diagnosis-box .chat-form button {
+  color: white;
+  border: 0;
+}
+
+/* Tablets and smaller screens */
+@media (max-width: 900px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 65px 0;
+  }
+
+  .hero-content > div:first-child {
+    min-width: 0;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .visual {
+    width: 100%;
+    max-width: 540px;
+    margin: auto;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: flex;
+    margin-left: auto;
+  }
+
+  .nav-links {
+    display: none;
+    order: 3;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 14px 0;
+  }
+
+  .nav-links.is-open {
+    display: flex;
+  }
+
+  .nav-links a,
+  .navbar > .nav-cta {
+    display: block;
+    padding: 13px 16px;
+    border-radius: 12px;
+  }
+
+  .navbar > .nav-cta {
+    order: 4;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a:hover {
+    background: rgba(255,255,255,.08);
+  }
+}
+
+/* Smartphones */
+@media (max-width: 600px) {
+  .navbar {
+    width: calc(100% - 28px);
+    margin-top: 14px;
+    padding: 12px;
+    border-radius: 18px;
+    gap: 10px;
+  }
+
+  .logo {
+    font-size: 19px;
+    gap: 9px;
+  }
+
+  .logo-mark {
+    width: 39px;
+    height: 39px;
+  }
+
+  .hero {
+    min-height: auto;
+    background-position: 58% center;
+  }
+
+  .hero-content {
+    width: calc(100% - 36px);
+    min-height: auto;
+    padding: 70px 0 45px;
+  }
+
+  .hero h1 {
+    font-size: clamp(38px, 10vw, 56px);
+    line-height: 1.12;
+    letter-spacing: -1.8px;
+    overflow-wrap: break-word;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    padding: 10px 12px;
+    letter-spacing: .2px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    min-height: 52px;
+    text-align: center;
+  }
+
+  .visual {
+    transform: none;
+    min-height: 290px;
+    overflow: hidden;
+  }
+
+  .orbit {
+    width: 220px;
+    height: 220px;
+  }
+
+  .ai-core {
+    width: 112px;
+    height: 112px;
+    border-radius: 28px;
+    font-size: 43px;
+  }
+
+  .float-card {
+    max-width: 42%;
+    padding: 10px;
+    font-size: 10px;
+  }
+
+  .float-card small {
+    font-size: 9px;
+  }
+
+  .section {
+    padding: 65px 20px;
+  }
+
+  .section-heading h2 {
+    font-size: clamp(29px, 8vw, 40px);
+    letter-spacing: -1px;
+  }
+
+  .feature {
+    padding: 25px;
+  }
+
+  .cta-section {
+    width: calc(100% - 32px);
+    padding: 45px 20px;
+  }
+
+  .diagnosis-section {
+    padding: 35px 12px;
+  }
+
+  .diagnosis-box {
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  .assistant-heading {
+    padding: 16px;
+    gap: 10px;
+  }
+
+  .assistant-avatar {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+
+  .assistant-heading strong {
+    font-size: 15px;
+  }
+
+  .assistant-heading small {
+    font-size: 10px;
+  }
+
+  .assistant-status {
+    font-size: 11px;
+    padding: 6px 9px;
+  }
+
+  .workspace-intro {
+    padding: 28px 16px 8px;
+  }
+
+  .workspace-intro h2 {
+    font-size: 25px;
+  }
+
+  .workspace-intro p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .diagnosis-box .chat-messages {
+    min-height: 120px;
+    max-height: 350px;
+    padding: 16px;
+  }
+
+  .diagnosis-box .chat-message {
+    max-width: 95%;
+    padding: 13px;
+    font-size: 14px;
+  }
+
+  .diagnosis-box .chat-form {
+    margin: 10px 12px 18px;
+    padding: 12px;
+  }
+
+  .diagnosis-box .chat-form button {
+    width: 100%;
+    min-height: 48px;
+  }
+
+  .quick-issues {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 9px;
+    padding: 0 12px 18px;
+  }
+
+  .quick-issue {
+    min-height: 105px;
+    padding: 14px;
+    font-size: 12px;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 360px) {
+  .quick-issues {
+    grid-template-columns: 1fr;
+  }
+}
+
