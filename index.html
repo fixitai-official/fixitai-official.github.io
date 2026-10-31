@@ -156,6 +156,45 @@
       </div>
     </section>
   </main>
+  
+<section class="section diagnosis-section" id="diagnose">
+  <div class="section-heading">
+    <span class="kicker">FIXIT AI ASSISTANT</span>
+    <h2>What's wrong with your PC?</h2>
+    <p>Describe your issue and explore possible solutions.</p>
+  </div>
+
+  <div class="diagnosis-box">
+    <div class="assistant-heading">
+      <div class="assistant-avatar">✦</div>
+      <div>
+        <strong>FIXIT AI</strong>
+        <small>Troubleshooting Assistant</small>
+      </div>
+      <span class="assistant-status">● Ready</span>
+    </div>
+
+    <div id="chat-messages" class="chat-messages"
+         role="log" aria-live="polite">
+      <div class="chat-message assistant-message">
+        Hello! I'm FIXIT AI. Tell me what's happening
+        with your computer, and I'll help you
+        troubleshoot it.
+      </div>
+    </div>
+
+    <form id="diagnosis-form" class="chat-form">
+      <label for="problem-input">Describe your problem</label>
+      <textarea id="problem-input" rows="3"
+        placeholder="Example: My laptop is slow and keeps freezing..."
+        maxlength="1500" required></textarea>
+      <button type="submit" class="btn btn-primary">
+        Diagnose Problem →
+      </button>
+    </form>
+  </div>
+</section>
+
 
   <footer>
     <span>© 2026 FIXIT AI. All rights reserved.</span>
