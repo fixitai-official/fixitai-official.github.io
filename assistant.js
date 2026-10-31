@@ -106,5 +106,20 @@ document.addEventListener("DOMContentLoaded", () => {
     input.value = "";
 
     addMessage(diagnose(problem), "assistant");
+    
+// Quick troubleshooting cards
+
+document.querySelectorAll(".quick-issue").forEach(card => {
+  card.addEventListener("click", () => {
+    const problem = card.dataset.problem;
+
+    input.value = problem;
+    input.focus();
+
+    // Use the existing diagnosis form.
+    form.requestSubmit();
+  });
+});
+
   });
 });
