@@ -400,11 +400,12 @@ footer {
   .section { padding: 75px 6%; }
   .cta-section { padding: 55px 22px; }
 }
-
-@media(prefers-reduced-motion:reduce) {
-  *,*::before,*::after {
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
     animation: none !important;
     scroll-behavior: auto !important;
+  }
+}
     
 /* FIXIT AI — Diagnosis Assistant */
 
