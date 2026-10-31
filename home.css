@@ -531,3 +531,164 @@ footer {
 
   }
 }
+
+/* FIXIT AI — AURA DIAGNOSIS WORKSPACE */
+
+.diagnosis-section {
+  padding: 85px 5%;
+  background:
+    radial-gradient(circle at 50% 0%,
+      rgba(36, 101, 200, .12), transparent 55%),
+    #07111f;
+}
+
+.diagnosis-section > .section-heading {
+  display: none;
+}
+
+.diagnosis-box {
+  max-width: 1050px;
+  margin: 0 auto;
+  border-radius: 24px;
+  border: 1px solid rgba(109, 164, 225, .16);
+  background: #0c192d;
+  box-shadow: 0 30px 100px rgba(0,0,0,.3);
+  overflow: hidden;
+}
+
+.assistant-heading {
+  padding: 22px 28px;
+  background: #0d1c32;
+  border-bottom: 1px solid #263b55;
+}
+
+.assistant-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: linear-gradient(135deg,#2865ef,#3b82f6);
+  box-shadow: 0 8px 25px rgba(45,110,255,.2);
+}
+
+.assistant-heading strong {
+  font-size: 17px;
+  letter-spacing: .3px;
+}
+
+.assistant-heading small {
+  font-size: 12px;
+}
+
+.assistant-status {
+  padding: 7px 13px;
+  border: 1px solid rgba(52,211,153,.2);
+  border-radius: 30px;
+  background: rgba(52,211,153,.07);
+}
+
+.workspace-intro {
+  padding: 45px 25px 12px;
+  text-align: center;
+}
+
+.workspace-intro h2 {
+  margin: 0 0 12px;
+  font-size: clamp(25px,3vw,36px);
+  letter-spacing: -1px;
+}
+
+.workspace-intro p {
+  margin: 0;
+  color: #a9c2df;
+  font-size: 16px;
+}
+
+.diagnosis-box .chat-messages {
+  min-height: 110px;
+  max-height: 350px;
+  padding: 22px 28px;
+}
+
+.diagnosis-box .chat-form {
+  position: relative;
+  margin: 10px 24px 20px;
+  padding: 16px;
+  border: 1px solid #365474;
+  border-radius: 19px;
+  background: #172b45;
+}
+
+.diagnosis-box .chat-form label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #b9d1eb;
+}
+
+.diagnosis-box .chat-form textarea {
+  min-height: 85px;
+  border: 0;
+  background: transparent;
+  padding: 12px 0;
+  box-shadow: none;
+  color: white;
+  font-size: 15px;
+}
+
+.diagnosis-box .chat-form textarea::placeholder {
+  color: #9fb9d5;
+}
+
+.diagnosis-box .chat-form button {
+  padding: 13px 22px;
+  background: #3478f6;
+  border-radius: 13px;
+}
+
+.diagnosis-box .chat-form button:hover {
+  background: #4c8cff;
+}
+
+.quick-issues {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 12px;
+  padding: 0 24px 26px;
+}
+
+.quick-issue {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 20px;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  background: #172b45;
+  color: #f8fbff;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition: background .2s, transform .2s,
+    border-color .2s;
+}
+
+.quick-issue:hover {
+  transform: translateY(-3px);
+  background: #203a5a;
+  border-color: #3976b9;
+}
+
+.quick-icon {
+  color: #73d8ff;
+  font-size: 22px;
+}
+
+@media(max-width:600px) {
+  .diagnosis-section { padding: 45px 4%; }
+  .workspace-intro { padding: 30px 15px 10px; }
+  .diagnosis-box .chat-form { margin: 10px 14px 18px; }
+  .quick-issues { padding: 0 14px 18px; }
+  .quick-issue { padding: 15px; }
+}
+
