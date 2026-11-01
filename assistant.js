@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
 document.querySelector(".diagnosis-section")
   .classList.add("conversation-mode");
+    
     const problem = input.value.trim();
     if (!problem) return;
 
