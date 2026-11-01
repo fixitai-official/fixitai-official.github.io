@@ -1119,4 +1119,36 @@ img, video, svg {
     font-size: 14px;
   }
 }
+#chat-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  max-height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 15px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 
+.chat-message {
+  display: block;
+  width: fit-content;
+  max-width: 85%;
+  padding: 14px 18px;
+  border-radius: 16px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.user-message {
+  align-self: flex-end;
+}
+
+.assistant-message {
+  align-self: flex-start;
+}
