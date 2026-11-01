@@ -1022,7 +1022,33 @@ img, video, svg {
     font-size: 14px;
     line-height: 1.6;
   }
+#chat-messages {
+  height: 420px;
+  max-height: 420px;
+  min-height: 420px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  box-sizing: border-box;
+}
 
+.chat-message {
+  flex-shrink: 0;
+  max-width: 85%;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.user-message {
+  align-self: flex-end;
+}
+
+.assistant-message {
+  align-self: flex-start;
+}
   .diagnosis-box .chat-messages {
     min-height: 120px;
     max-height: 350px;
