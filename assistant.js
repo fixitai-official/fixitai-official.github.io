@@ -14,8 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
     message.className = `chat-message ${sender}-message`;
     message.textContent = text;
     messages.appendChild(message);
-
-    });
   }
 
   async function askAI(problem) {
