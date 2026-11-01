@@ -15,9 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
     message.textContent = text;
     messages.appendChild(message);
 
-    message.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest"
     });
   }
 
