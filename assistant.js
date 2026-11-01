@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   form.addEventListener("submit", async event => {
     event.preventDefault();
+    document.body.classList.add("chat-active");
     
 document.querySelector(".diagnosis-section")
   .classList.add("conversation-mode");
