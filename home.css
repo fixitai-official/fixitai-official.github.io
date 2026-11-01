@@ -1178,3 +1178,46 @@ img, video, svg {
 .assistant-message {
   align-self: flex-start;
 }
+/* FIXIT AI conversation layout */
+
+.diagnosis-section {
+  transition: all 0.4s ease;
+}
+
+.diagnosis-section.conversation-mode {
+  min-height: 100vh;
+  padding-top: 35px;
+  display: flex;
+  flex-direction: column;
+}
+
+.conversation-mode .section-heading,
+.conversation-mode .workspace-intro {
+  display: none;
+}
+
+.conversation-mode .diagnosis-box {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.conversation-mode #chat-messages {
+  flex: 1;
+  min-height: 300px;
+  max-height: 60vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.conversation-mode .chat-form {
+  position: sticky;
+  bottom: 15px;
+  background: inherit;
+  padding: 15px 0;
+}
